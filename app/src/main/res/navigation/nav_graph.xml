@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/alarmsFragment">
+    <fragment
+        android:id="@+id/mapScreenFragment"
+        android:name="gentle.hilt.playground.presentation.ui.maps.MapScreenFragment"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_map_screen" />
+    <fragment
+        android:id="@+id/alarmsFragment"
+        android:name="gentle.hilt.playground.presentation.ui.alarm.AlarmsFragment"
+        android:label="fragment_setup_timer"
+        tools:layout="@layout/fragment_alarms" >
+        <action
+            android:id="@+id/action_alarmsFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_alarmsFragment_to_addAlarmFragment"
+            app:destination="@id/addAlarmFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_alarmsFragment_to_sleepStatisticFragment"
+            app:destination="@id/sleepStatisticFragment"
+            app:enterAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/optionsFragment"
+        android:name="gentle.hilt.playground.presentation.ui.options.OptionsFragment"
+        android:label="fragment_options"
+        tools:layout="@layout/fragment_options" >
+        <action
+            android:id="@+id/action_optionsFragment_to_alarmsFragment"
+            app:destination="@id/alarmsFragment"
+            app:enterAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAlarmFragment"
+        android:name="gentle.hilt.playground.presentation.ui.alarm.add.AddAlarmFragment"
+        android:label="fragment_add_alarm"
+        tools:layout="@layout/fragment_add_alarm" />
+    <fragment
+        android:id="@+id/sleepStatisticFragment"
+        android:name="gentle.hilt.playground.presentation.ui.sleepStatistic.SleepStatisticFragment"
+        android:label="fragment_self_improvement"
+        tools:layout="@layout/fragment_sleep_statistic" />
+    <fragment
+        android:id="@+id/timerFragment"
+        android:name="gentle.hilt.playground.presentation.ui.timer.TimerFragment"
+        android:label="fragment_timer"
+        tools:layout="@layout/fragment_timer" />
+</navigation>

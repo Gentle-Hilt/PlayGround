@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="300dp"
+
+    android:layout_margin="30dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/interval_minutes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSnooze" />
+
+    <TextView
+        android:id="@+id/tvSnooze"
+        style="?android:attr/actionOverflowButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="normal"
+        android:text="@string/snooze_tittle"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/btnOk"
+        style="?android:attr/actionOverflowButtonStyle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/dialog_snooze_button"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="@string/ok"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/discreteSeekBar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <io.github.stack07142.discreteseekbar.DiscreteSeekBar
+        android:id="@+id/discreteSeekBar"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:discrete_seekbar_maxValue="300"
+        app:discrete_seekbar_minValue="-200"
+        app:discrete_seekbar_sectionCount="5"
+        app:discrete_seekbar_thumbColor="@color/blue_sky"
+        app:discrete_seekbar_thumbDefaultSize="16dp"
+        app:discrete_seekbar_thumbPressedSize="24dp"
+        app:discrete_seekbar_tickMarkDrawable="@drawable/ic_baseline_first_page_24"
+        app:discrete_seekbar_trackTouchEnable="true"
+        app:discrete_seekbar_trackWidth="1dp"
+        app:discrete_seekbar_value="100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSnooze" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

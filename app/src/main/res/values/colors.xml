@@ -5,6 +5,29 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="main_black">#FF000000</color>
+    <color name="main_white">#FFFFFFFF</color>
+    <color name="black_transparent">#CC000000</color>
+    <color name="color_accent">#FFE600</color>
+    <color name="color_pm_am">#414746</color>
+    <color name="fab_color">#0D0D0D</color>
+    <color name="gray">#848484</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="brightBlack">#2c2d2f</color>
+    <color name="custom_checked">#03FFEA</color>
+    <color name="custom_unchecked">#FFFFFF</color>
+    <color name="blue_sky">#00FFF2</color>
+    <color name="splash_screen">#0370C5</color>
+    <color name="blue">#1a73e8</color>
+    <color name="blue_white">#1a73e8</color>
+    <color name="blue_bright">#114ADA</color>
+    <color name="orange">#FF8800</color>
+    <color name="walk">#54D959</color>
+    <color name="car">#2680F6</color>
+    <color name="bus">#4E332B</color>
+    <color name="text_input_layout">#FFFFFF</color>
 </resources>
+
+
+

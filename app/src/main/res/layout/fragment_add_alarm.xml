@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".presentation.ui.alarm.add.AddAlarmFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAddAlarm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAlarmGoal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/rounded_edittext"
+            android:includeFontPadding="true"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAlarmGoal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:hint="@string/hint_your_tomorrow_goal"
+                android:includeFontPadding="true"
+                android:inputType="textPostalAddress"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:selectAllOnFocus="true"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/blue"
+                android:textCursorDrawable="@drawable/cursor_selection_line"
+                android:textSelectHandle="@drawable/ic_baseline_circle_24"
+                android:textSize="17sp"
+                tools:ignore="RtlSymmetry" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/date_picker"
+            android:timePickerMode="spinner"
+            app:layout_constraintBottom_toTopOf="@+id/tvChooseImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilAlarmGoal" />
+
+
+
+        <TextView
+            android:id="@+id/tvChooseImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_image"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/cvRoundedImageAddAlarm"
+            app:layout_constraintEnd_toEndOf="@+id/cvRoundedImageAddAlarm"
+            app:layout_constraintStart_toStartOf="@+id/cvRoundedImageAddAlarm" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvRoundedImageAddAlarm"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/ivFingerClick"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:animateLayoutChanges="true"
+                android:layout_gravity="center"
+                android:contentDescription="@string/image_description"
+                android:src="@drawable/finger_click"/>
+
+            <ImageView
+                android:id="@+id/ivChooseImage"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/image_description"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAddAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:contentDescription="@string/setup_time_picker"
+            app:backgroundTint="@color/fab_color"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/cvRoundedImageAddAlarm"
+            app:layout_constraintStart_toEndOf="@+id/cvRoundedImageAddAlarm"
+            app:layout_constraintTop_toBottomOf="@+id/tvChooseImage"
+            app:srcCompat="@drawable/ic_add" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

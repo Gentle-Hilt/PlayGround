@@ -1,3 +1,83 @@
 <resources>
     <string name="app_name">PlayGround</string>
+
+    <!--bottom_nav_graph-->
+    <string name="alarm_fragment_nav">Alarm</string>
+    <string name="timer_fragment_nav">Timer</string>
+    <string name="maps_fragment_nav">Maps</string>
+
+    <!--Descriptions-->
+    <string name="image_description">This is image</string>
+    <string name="timer_foreground_service">This process is your timer!</string>
+    <string name="setup_time_picker">Setup Time Picker</string>
+    <string name="back_btn_description">Back to alarms</string>
+
+    <!--Error messages-->
+    <string name="unknown_error_message">Unknown error</string>
+    <string name="not_found_error_message">Not found</string>
+    <string name="network_error_message">Network error</string>
+    <string name="remote_error_message">Remote server error</string>
+    <string name="error_make_route">"type start and destination before making any route"</string>
+
+    <!--snooze_dialog-->
+    <string name="snooze_tittle">Snooze</string>
+
+    <!--map_settings_menu-->
+    <string name="start_menu">Preload First point</string>
+    <string name="end_menu">Preload Second point</string>
+    <string name="user_camera_position_menu">Preload your last position</string>
+    <string name="do_not_save_menu">Do not save and load my locations</string>
+
+    <!--route_type_menu-->
+    <string name="bus_menu">Bus</string>
+    <string name="car_menu">Car</string>
+    <string name="pedestrian_menu">Walk</string>
+
+    <!--fragment_sleep_statistic-->
+    <string name="your_sleep_statistic_no_stat_message">To see your sleep statistic, sleep First !</string>
+    <string name="delete_sleep_statistic">Delete Sleep Statistic</string>
+    <string name="delete_sleep_statistic_tittle">Clear your sleep statistic?</string>
+    <string name="delete_sleep_statistic_message">This cannot be reverted. Are you sure about it?</string>
+    <string name="delete_sleep_positive">OK</string>
+
+    <!--set_time_timer_dialog-->
+    <string name="ok">OK</string>
+    <string name="set_time">Set time</string>
+    <string name="cancel">Cancel</string>
+    <string name="interval_minutes">Interval (minutes)</string>
+
+
+    <!--fragment_options-->
+    <string name="timer_settings">Timer Settings</string>
+    <string name="alarm_settings">Alarm settings</string>
+    <string name="default_alarm_sound">Default Alarm sound</string>
+    <string name="default_ringtone_sound">Default Ringtone sound</string>
+    <string name="general">General</string>
+    <string name="use_dark_theme">Use dark theme</string>
+    <string name="date_and_time">Date and Time</string>
+    <string name="agree_option">Agree</string>
+    <string name="disagree_option">Disagree</string>
+    <string name="tittle_write">Allow application to modify Default System Settings ? </string>
+    <string name="message_write">Grant Write Settings permission in order to change Default Alarm Sound</string>
+    <string name="snooze_message">Snooze</string>
+    <string name="snooze_message_made">You changed the snooze</string>
+
+    <!--fragment_map_screen-->
+    <string name="hint_destination">Destination</string>
+    <string name="hint_start">Start</string>
+
+    <!--fragment_alarms-->
+    <string name="setup_alarm_message">Setup Alarm</string>
+
+    <!--fragment_add_alarm-->
+    <string name="hint_your_tomorrow_goal">Your tomorrow Goal!</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="added_alarm">Added alarm</string>
+
+    <!--activity_lock_screen_alarm-->
+    <string name="turn_off_alarm">turn off alarm</string>
+    <string name="it_s_time_for">It\'s time for</string>
+
+
+
 </resources>

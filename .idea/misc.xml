@@ -3,7 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ProjectsIntelliJ/PlayGround/app/src/main/res/drawable/bottom_nav_selector.xml" value="0.15" />
+        <entry key="..\:/ProjectsIntelliJ/PlayGround/app/src/main/res/drawable/ic_add.xml" value="0.186" />
+        <entry key="..\:/ProjectsIntelliJ/PlayGround/app/src/main/res/drawable/ic_home_screen.xml" value="0.15" />
         <entry key="..\:/ProjectsIntelliJ/PlayGround/app/src/main/res/layout/activity_main.xml" value="0.17129162462159436" />
+        <entry key="..\:/ProjectsIntelliJ/PlayGround/app/src/main/res/layout/fragment_add_timer_item.xml" value="0.296195652173913" />
+        <entry key="..\:/ProjectsIntelliJ/PlayGround/app/src/main/res/layout/fragment_home_screen.xml" value="0.296195652173913" />
+        <entry key="..\:/ProjectsIntelliJ/PlayGround/app/src/main/res/layout/fragment_self_improvement.xml" value="0.296195652173913" />
+        <entry key="..\:/ProjectsIntelliJ/PlayGround/app/src/main/res/layout/fragment_setup_timer.xml" value="0.33" />
+        <entry key="..\:/ProjectsIntelliJ/PlayGround/app/src/main/res/layout/item_setup_timer.xml" value="0.33" />
+        <entry key="..\:/ProjectsIntelliJ/PlayGround/app/src/main/res/layout/playground_activity.xml" value="0.25" />
+        <entry key="..\:/ProjectsIntelliJ/PlayGround/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3536458333333333" />
       </map>
     </option>
   </component>

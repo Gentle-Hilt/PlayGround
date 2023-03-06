@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single" />
+
+    <item
+        android:id="@+id/firstPointTracking"
+        android:title="@string/start_menu"
+        android:checkable="true"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/secondPointTracking"
+        android:title="@string/end_menu"
+        android:checkable="true"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/userCameraPosition"
+        android:title="@string/user_camera_position_menu"
+        android:checkable="true"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/noPointTracking"
+        android:title="@string/do_not_save_menu"
+        android:checkable="true"
+        app:showAsAction="never"/>
+</menu>

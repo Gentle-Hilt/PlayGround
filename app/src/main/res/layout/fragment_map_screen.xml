@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.maps.MapScreenFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mapScreenCl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <com.yandex.mapkit.mapview.MapView
+            android:id="@+id/mapKit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilFirstPoint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/rounded_edittext"
+            android:includeFontPadding="true"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searchFirstPoint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/hint_start"
+                android:includeFontPadding="true"
+                android:inputType="textPostalAddress"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:selectAllOnFocus="true"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/blue"
+                android:textCursorDrawable="@drawable/cursor_selection_line"
+                android:textSelectHandle="@drawable/ic_baseline_circle_24"
+                android:textSize="17sp"
+                tools:ignore="RtlSymmetry" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSecondPoint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/rounded_edittext"
+            android:includeFontPadding="true"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilFirstPoint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searchSecondPoint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/hint_destination"
+                android:includeFontPadding="true"
+                android:inputType="textPostalAddress"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:selectAllOnFocus="true"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/blue"
+                android:textCursorDrawable="@drawable/cursor_selection_line"
+                android:textSelectHandle="@drawable/ic_baseline_circle_24"
+                android:textSize="17sp"
+                tools:ignore="RtlSymmetry" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+        <ListView
+            android:id="@+id/lvSuggestResult"
+            style="@android:style/Theme.Light"
+            android:focusable="false"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:visibility="gone"
+            android:windowSoftInputMode="adjustResize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilSecondPoint" />
+
+
+        <ImageButton
+            android:id="@+id/mapOptions"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginEnd="3dp"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/image_description"
+            android:src="@drawable/ic_baseline_settings_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/routeOptions"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/image_description"
+            app:layout_constraintEnd_toEndOf="@+id/mapOptions"
+            app:layout_constraintStart_toStartOf="@+id/mapOptions"
+            app:layout_constraintTop_toBottomOf="@+id/mapOptions" />
+
+
+        <ImageButton
+            android:id="@+id/zoomIn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/image_description"
+
+            android:src="@drawable/ic_baseline_add_box_24"
+            app:layout_constraintBottom_toTopOf="@+id/zoomOut"
+            app:layout_constraintStart_toStartOf="@+id/zoomOut" />
+
+
+        <ImageButton
+            android:id="@+id/zoomOut"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_margin="3dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_baseline_minus_box_24dp"
+            android:contentDescription="@string/image_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mapOptions" />
+
+
+        <ImageButton
+            android:id="@+id/ibMakeRoute"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="35dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_baseline_route_24"
+            android:contentDescription="@string/image_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/turnUserTracking"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/user_location_track"
+            android:contentDescription="@string/image_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalHelper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="340dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FFFFFF</color>
+    <color name="white">#000000</color>
+    <color name="fab_color">#114ADA</color>
+    <color name="blue_sky">#00FFFF</color>
+    <color name="blue">#005BA2</color>
+    <color name="orange">#FFFFFF</color>
+    <color name="black_transparent">#E6FFFFFF</color>
+    <color name="brightBlack">#FFFFFF</color>
+    <color name="blue_white">#FFFFFF</color>
+    <color name="walk">#FFE600</color>
+    <color name="car">#2680F6</color>
+    <color name="bus">#00FFF2</color>
+    <color name="text_input_layout">#2c2d2f</color>
+</resources>

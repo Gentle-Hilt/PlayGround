@@ -1,0 +1,109 @@
+<app.futured.hauler.HaulerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dragDownView"
+    android:layout_width="match_parent"
+    android:theme="@style/AppTheme.Draggable"
+    app:dragUpEnabled="true"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@color/gray"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/lockScreenAlarmTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/main_white"
+                android:textSize="70sp"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintBottom_toTopOf="@+id/turnOffAlarm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                tools:text="10:06"
+                />
+
+            <TextView
+                android:id="@+id/lockScreenAmPm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="@+id/lockScreenAlarmTime"
+                app:layout_constraintStart_toEndOf="@+id/lockScreenAlarmTime"
+
+                tools:text="Am"
+                />
+
+
+            <TextView
+                android:id="@+id/lockScreenWeekDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                app:layout_constraintHorizontal_weight="0.5"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lockScreenAlarmTime"
+                tools:text="Saturday" />
+
+
+            <Button
+                android:id="@+id/turnOffAlarm"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:text="@string/turn_off_alarm"
+                android:textSize="30sp"
+                android:textStyle="normal"
+                android:textColor="@color/main_white"
+                android:background="@drawable/lock_screen_activity_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/it_s_time_for"
+                android:textColor="@color/main_white"
+                android:textSize="25sp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/turnOffAlarm" />
+
+
+            <TextView
+                android:id="@+id/textSnooze"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/main_white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/turnOffAlarm"
+
+                tools:text="Swipe Up to snooze for 15 minutes"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</app.futured.hauler.HaulerView>

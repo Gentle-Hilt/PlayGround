@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/alarmsFragment"
+        android:title="@string/alarm_fragment_nav"
+        android:icon="@drawable/ic_baseline_alarm_24"/>
+
+
+    <item android:id="@+id/timerFragment"
+        android:title="@string/timer_fragment_nav"
+        android:icon="@drawable/ic_baseline_timer_24"/>
+
+
+    <item android:id="@+id/mapScreenFragment"
+        android:title="@string/maps_fragment_nav"
+        android:icon="@drawable/ic_baseline_map_24"/>
+
+</menu>

@@ -1,0 +1,14 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="width_for_edit_text_in_landscape_mode">100dp</dimen>
+    <dimen name="snooze_bottom_sheet">200dp</dimen>
+    <dimen name="turn_on_user_tracking_btn">40dp</dimen>
+    <dimen name="bottom_margin_user_tracking_btn">35dp</dimen>
+    <dimen name="map_options_in_landscape_mode">35dp</dimen>
+    <dimen name="set_new_time">24dp</dimen>
+    <dimen name="margin_top_map_option_button_in_landscape_mode">10dp</dimen>
+    <dimen name="margin_end_map_option_button_in_landscape_mode">10dp</dimen>
+    <dimen name="wight_height_ivChooseImage_add_alarm_fragment">200dp</dimen>
+    <dimen name="margin_end_for_add_fragment">100dp</dimen>
+    <dimen name="margin_bottom_for_add_fragment">30dp</dimen>
+</resources>
