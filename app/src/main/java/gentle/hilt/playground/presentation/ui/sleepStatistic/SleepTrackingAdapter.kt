@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.RequestManager
+import gentle.hilt.playground.R
 import gentle.hilt.playground.data.room.entity.SleepTrackingEntity
 import gentle.hilt.playground.databinding.SleepTrackingItemBinding
 import org.joda.time.*
@@ -83,9 +84,9 @@ class SleepTrackingAdapter @Inject constructor(
             binding.apply {
                 glide.load(sleepTracking.image).into(ivUsedImage)
                 if (intDurationDay.absoluteValue < HALF_AND_HOUR || intDurationNight < HALF_AND_HOUR) {
-                    tvSleepWas.text = "Your snooze time was"
+                    tvSleepWas.text = context.getString(R.string.snooze_was)
                 } else {
-                    tvSleepWas.text = "Your sleep time was"
+                    tvSleepWas.text = context.getString(R.string.sleep_time)
                 }
 
                 if (DateFormat.is24HourFormat(context)) {
@@ -102,14 +103,14 @@ class SleepTrackingAdapter @Inject constructor(
 
                 when (creationDateJodaTime) {
                     LocalDate.now().dayOfYear -> {
-                        tvDayWeekTittle.text = "Today"
+                        tvDayWeekTittle.text = context.getString(R.string.Today)
                     }
                     yesterdayJodaTime -> {
-                        tvDayWeekTittle.text = "Yesterday"
+                        tvDayWeekTittle.text = context.getString(R.string.Yesterday)
                     }
                     else -> {
                         val daysAgo = todayJodaTime - creationDateJodaTime
-                        tvDayWeekTittle.text = "$daysAgo days ago"
+                        tvDayWeekTittle.text = "$daysAgo ${context.getString(R.string.days_ago)}"
                     }
                 }
 
@@ -121,8 +122,8 @@ class SleepTrackingAdapter @Inject constructor(
                         tvDurationNumbers.text = "${(difference.minutes)}"
                     }
                     creationTime == endTime -> {
-                        tvDurationNumbers.text = "24h"
-                        tvSleepWas.text = "Your sleep time was"
+                        tvDurationNumbers.text = context.getString(R.string.twenty_four_hours)
+                        tvSleepWas.text = context.getString(R.string.snooze_was)
                     }
                 }
             }

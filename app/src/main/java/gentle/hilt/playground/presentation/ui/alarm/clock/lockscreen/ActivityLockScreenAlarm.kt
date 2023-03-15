@@ -18,10 +18,10 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.lifecycleScope
 import app.futured.hauler.setOnDragDismissedListener
 import dagger.hilt.android.AndroidEntryPoint
-import de.coldtea.smplr.smplralarm.R
 import de.coldtea.smplr.smplralarm.alarmNotification
 import de.coldtea.smplr.smplralarm.channel
 import de.coldtea.smplr.smplralarm.smplrAlarmSet
+import gentle.hilt.playground.R
 import gentle.hilt.playground.data.datastore.DataStoreManager
 import gentle.hilt.playground.data.room.entity.SleepTrackingEntity
 import gentle.hilt.playground.databinding.ActivityLockScreenAlarmBinding
@@ -132,8 +132,8 @@ class ActivityLockScreenAlarm : AppCompatActivity() {
         )
 
         binding.apply {
-            textSnooze.text = "Swipe Up to snooze for $minutes minutes"
-            tvGoal.text = "It's time for $goal"
+            textSnooze.text = "${applicationContext.getString(R.string.Swipe)} $minutes ${applicationContext.getString(R.string.minutes)}"
+            tvGoal.text = "${applicationContext.getString(R.string.it_s_time_for)} $goal"
 
             if (DateFormat.is24HourFormat(applicationContext)) {
                 lockScreenAmPm.text = null
@@ -256,12 +256,12 @@ class ActivityLockScreenAlarm : AppCompatActivity() {
             alarmReceivedIntent { alarmReceivedIntent }
             notification {
                 alarmNotification {
-                    smallIcon { R.drawable.ic_baseline_notifications_active_24 }
-                    title { "Alarm" }
-                    bigText { "it's time for $goal" }
+                    smallIcon { de.coldtea.smplr.smplralarm.R.drawable.ic_baseline_notifications_active_24 }
+                    title { context.getString(R.string.Alarm) }
+                    bigText { "${context.getString(R.string.it_s_time_for)} $goal" }
                     autoCancel { true }
-                    firstButtonText { "Snooze" }
-                    secondButtonText { "Dismiss" }
+                    firstButtonText { context.getString(R.string.snooze_tittle) }
+                    secondButtonText { context.getString(R.string.turnOff_tittle) }
                     firstButtonIntent { snoozeIntent }
                     secondButtonIntent { dismissIntent }
                     notificationDismissedIntent { notificationDismissIntent }
@@ -271,8 +271,8 @@ class ActivityLockScreenAlarm : AppCompatActivity() {
                 channel {
                     importance { NotificationManager.IMPORTANCE_HIGH }
                     showBadge { false }
-                    name { "ViewModel Alarm" }
-                    description { "setting Alarm" }
+                    name { context.getString(R.string.alarm) }
+                    description { context.getString(R.string.your_alarm) }
                 }
             }
         }

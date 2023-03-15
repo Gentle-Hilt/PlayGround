@@ -11,16 +11,18 @@
     <string name="timer_foreground_service">This process is your timer!</string>
     <string name="setup_time_picker">Setup Time Picker</string>
     <string name="back_btn_description">Back to alarms</string>
+    <string name="your_alarm">Its your alarm</string>
 
     <!--Error messages-->
     <string name="unknown_error_message">Unknown error</string>
-    <string name="not_found_error_message">Not found</string>
     <string name="network_error_message">Network error</string>
     <string name="remote_error_message">Remote server error</string>
     <string name="error_make_route">"type start and destination before making any route"</string>
 
     <!--snooze_dialog-->
     <string name="snooze_tittle">Snooze</string>
+    <string name="turnOff_tittle">Turn Off</string>
+    <string name="Alarm">Alarm</string>
 
     <!--map_settings_menu-->
     <string name="start_menu">Preload First point</string>
@@ -39,6 +41,8 @@
     <string name="delete_sleep_statistic_tittle">Clear your sleep statistic?</string>
     <string name="delete_sleep_statistic_message">This cannot be reverted. Are you sure about it?</string>
     <string name="delete_sleep_positive">OK</string>
+    <string name="snooze_was">Your snooze time was</string>
+
 
     <!--set_time_timer_dialog-->
     <string name="ok">OK</string>
@@ -73,11 +77,32 @@
     <string name="hint_your_tomorrow_goal">Your tomorrow Goal!</string>
     <string name="choose_image">Choose Image</string>
     <string name="added_alarm">Added alarm</string>
+    <string name="alarm">Alarm</string>
 
     <!--activity_lock_screen_alarm-->
     <string name="turn_off_alarm">turn off alarm</string>
     <string name="it_s_time_for">It\'s time for</string>
 
 
+    <!-- alarm_adapter -->
+    <string name="off_on_alarm">Off</string>
+    <string name="alarm_in">Alarm in</string>
+    <string name="twenty_four_hours">24 hours 00 minute</string>
+
+    <!-- sleep_adapter -->
+    <string name="Today">Today</string>
+    <string name="Yesterday">Yesterday</string>
+    <string name="days_ago">days ago</string>
+    <string name="sleep_time">Your sleep time was</string>
+
+
+    <!-- activity_lock_screen-->
+    <string name="Swipe">Swipe to snooze for</string>
+    <string name="minutes">minutes</string>
+
+    <!-- timer_fragment -->
+    <string name="Timer">Timer</string>
+    <string name="Stop">Stop</string>
+    <string name="Start">Start</string>
 
 </resources>

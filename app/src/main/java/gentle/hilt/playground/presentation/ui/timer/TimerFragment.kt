@@ -52,12 +52,6 @@ class TimerFragment : Fragment() {
         const val NOTIFICATION_ID = 1
 
         const val NOTIFICATION_CHANNEL_ID = "112"
-        const val NOTIFICATION_CHANNEL_TITTLE = "Timer"
-
-        const val UPDATE_NOTIFICATION_TITTLE = "Timer"
-
-        const val STOP_SERVICE_BUTTON_MESSAGE = "Stop"
-        const val START_SERVICE_BUTTON_MESSAGE = "Start"
 
         const val CANCEL_FROM_NOTIFICATION = "cancel from notification"
         const val START_FROM_NOTIFICATION = "start from notification"

@@ -15,12 +15,8 @@ import gentle.hilt.playground.presentation.app.PlayGroundActivity.Companion.RING
 import gentle.hilt.playground.presentation.app.PlayGroundActivity.Companion.RINGTONE_TONE_URI
 import gentle.hilt.playground.presentation.ui.timer.TimerFragment.Companion.CANCEL_FROM_NOTIFICATION
 import gentle.hilt.playground.presentation.ui.timer.TimerFragment.Companion.NOTIFICATION_CHANNEL_ID
-import gentle.hilt.playground.presentation.ui.timer.TimerFragment.Companion.NOTIFICATION_CHANNEL_TITTLE
 import gentle.hilt.playground.presentation.ui.timer.TimerFragment.Companion.NOTIFICATION_ID
 import gentle.hilt.playground.presentation.ui.timer.TimerFragment.Companion.START_FROM_NOTIFICATION
-import gentle.hilt.playground.presentation.ui.timer.TimerFragment.Companion.START_SERVICE_BUTTON_MESSAGE
-import gentle.hilt.playground.presentation.ui.timer.TimerFragment.Companion.STOP_SERVICE_BUTTON_MESSAGE
-import gentle.hilt.playground.presentation.ui.timer.TimerFragment.Companion.UPDATE_NOTIFICATION_TITTLE
 import kotlinx.coroutines.*
 import javax.inject.Inject
 import kotlin.time.Duration.Companion.seconds
@@ -118,7 +114,7 @@ class ForegroundTimerService : Service() {
 
         val channel = NotificationChannel(
             NOTIFICATION_CHANNEL_ID,
-            NOTIFICATION_CHANNEL_TITTLE,
+            applicationContext.getString(R.string.Timer),
             NotificationManager.IMPORTANCE_DEFAULT
         )
         channel.setSound(null, null)
@@ -135,7 +131,7 @@ class ForegroundTimerService : Service() {
         stopSelf.putExtra(CANCEL_FROM_NOTIFICATION, true)
         val builder = Notification.Action.Builder(
             null,
-            STOP_SERVICE_BUTTON_MESSAGE,
+            applicationContext.getString(R.string.Stop),
             PendingIntent.getForegroundService(
                 this,
                 1,
@@ -149,7 +145,7 @@ class ForegroundTimerService : Service() {
         stopSelf.putExtra(START_FROM_NOTIFICATION, true)
         val builderStart = Notification.Action.Builder(
             null,
-            START_SERVICE_BUTTON_MESSAGE,
+            applicationContext.getString(R.string.Start),
             PendingIntent.getForegroundService(
                 this,
                 2,
@@ -160,7 +156,7 @@ class ForegroundTimerService : Service() {
         val actionStart = builderStart.build()
 
         val notification = Notification.Builder(this, NOTIFICATION_CHANNEL_ID)
-            .setContentTitle(UPDATE_NOTIFICATION_TITTLE)
+            .setContentTitle(applicationContext.getString(R.string.Timer))
             .setContentText(countDownTime.seconds.inWholeSeconds.seconds.toString())
             .setSmallIcon(R.drawable.ic_self_improvement)
             .addAction(actionCancel)

@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">PlayGround</string>
+
+    <!--bottom_nav_graph-->
+    <string name="alarm_fragment_nav">Будильник</string>
+    <string name="timer_fragment_nav">Таймер</string>
+    <string name="maps_fragment_nav">Карты</string>
+
+    <!--Descriptions-->
+    <string name="image_description">Это картинка</string>
+    <string name="timer_foreground_service">Это твой таймер!</string>
+    <string name="setup_time_picker">Установить таймер</string>
+    <string name="back_btn_description">Вернуться назад</string>
+    <string name="your_alarm">Твой будильник</string>
+
+    <!--Error messages-->
+    <string name="unknown_error_message">Неизвестная ошибка</string>
+    <string name="network_error_message">Интернет ошибка</string>
+    <string name="remote_error_message">Серверная ошибка</string>
+    <string name="error_make_route">Укажите обе позиции для маршрута</string>
+
+    <!--snooze_dialog-->
+    <string name="snooze_tittle">Повтор будильника</string>
+    <string name="turnOff_tittle">Выключить</string>
+    <string name="Alarm">Будильник</string>
+
+    <!--map_settings_menu-->
+    <string name="start_menu">Загружать старт</string>
+    <string name="end_menu">Загружать место назначения</string>
+    <string name="user_camera_position_menu">Загружать последнию позицию</string>
+    <string name="do_not_save_menu">Не сохранять координаты</string>
+
+    <!--route_type_menu-->
+    <string name="bus_menu">Автобус</string>
+    <string name="car_menu">Машина</string>
+    <string name="pedestrian_menu">Пешком</string>
+
+    <!--fragment_sleep_statistic-->
+    <string name="your_sleep_statistic_no_stat_message">Чтобы увидить свою статистику сна, сначала поспи!</string>
+    <string name="delete_sleep_statistic">Удалить всю статистику</string>
+    <string name="delete_sleep_statistic_tittle">Очистить всю статистику сна?</string>
+    <string name="delete_sleep_statistic_message">Это действие не может быть возращенно, вы уверены? </string>
+    <string name="delete_sleep_positive">ОК</string>
+    <string name="snooze_was">Ты вздремнул на</string>
+
+    <!--set_time_timer_dialog-->
+    <string name="ok">ОК</string>
+    <string name="set_time">OK</string>
+    <string name="cancel">Отмена</string>
+    <string name="interval_minutes">Интервал (минуты)</string>
+
+
+    <!--fragment_options-->
+    <string name="timer_settings">Настройки Таймера</string>
+    <string name="alarm_settings">Настройки Будильника</string>
+    <string name="default_alarm_sound">Стандартный звук будильника</string>
+    <string name="default_ringtone_sound">Стандартный звук рингтона</string>
+    <string name="general">Общие</string>
+    <string name="use_dark_theme">Использовать темную тему</string>
+    <string name="date_and_time">Дата и время</string>
+    <string name="agree_option">Согласен</string>
+    <string name="disagree_option">Не согласен</string>
+    <string name="tittle_write">Позволить приложению модифицировать настройки системы? </string>
+    <string name="message_write">Предоставить приложению права по изменению системных настроек?</string>
+    <string name="snooze_message">Повторы будильника</string>
+    <string name="snooze_message_made">Интервал повторов измененен</string>
+
+    <!--fragment_map_screen-->
+    <string name="hint_destination">Место назначения</string>
+    <string name="hint_start">Старт</string>
+
+    <!--fragment_alarms-->
+    <string name="setup_alarm_message">Назначить будильник</string>
+
+    <!--fragment_add_alarm-->
+    <string name="hint_your_tomorrow_goal">Твоя завтрашняя цель!</string>
+    <string name="choose_image">Выбрать картинку</string>
+    <string name="added_alarm">Добавлен будильник</string>
+    <string name="alarm">Будильник</string>
+
+    <!--activity_lock_screen_alarm-->
+    <string name="turn_off_alarm">Выкл</string>
+    <string name="it_s_time_for">Время для</string>
+
+    <!-- alarm_adapter -->
+    <string name="off_on_alarm">Выключен</string>
+    <string name="alarm_in">Через</string>
+    <string name="twenty_four_hours">24 часа</string>
+
+    <!-- sleep_adapter -->
+    <string name="Today">Сегодня</string>
+    <string name="Yesterday">Вчера</string>
+    <string name="days_ago">дней назад</string>
+    <string name="sleep_time">Ты спал</string>
+
+    <!-- activity_lock_screen-->
+    <string name="Swipe">Свайп чтобы отложить на </string>
+    <string name="minutes">минут</string>
+
+    <!-- timer_fragment -->
+    <string name="Timer">Таймер</string>
+    <string name="Stop">Стоп</string>
+    <string name="Start">Старт</string>
+</resources>

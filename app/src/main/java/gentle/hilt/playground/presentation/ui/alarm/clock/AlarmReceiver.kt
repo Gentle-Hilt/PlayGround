@@ -34,6 +34,7 @@ import kotlinx.coroutines.launch
 import org.joda.time.DateTime
 import org.joda.time.Duration
 import org.joda.time.LocalDate
+import timber.log.Timber
 import java.util.*
 import javax.inject.Inject
 
@@ -154,7 +155,8 @@ class AlarmReceiver : BroadcastReceiver() {
                 context,
                 ALARM_TONE_URI.toString(),
                 snoozeCreationDate.time,
-                goal.toString()
+                goal.toString(),
+                image.toString()
             )
         }
         if (intent.action == ACTION_DISMISS) {
@@ -172,7 +174,6 @@ class AlarmReceiver : BroadcastReceiver() {
         if (mMinute == SIXTY_MINUTES) {
             mMinute -= SIXTY_MINUTES
         }
-        mHour += 1
 
         if (mHour > TWENTY_THREE_HOURS) mHour = 0
 
@@ -189,7 +190,8 @@ class AlarmReceiver : BroadcastReceiver() {
         applicationContext: Context,
         alarmTone: String,
         creationDateSnooze: Long,
-        goal: String
+        goal: String,
+        image:String
     ): Int {
         val onClickShortcutIntent = Intent(
             applicationContext,
@@ -210,6 +212,7 @@ class AlarmReceiver : BroadcastReceiver() {
             putExtra(MINUTE, minute)
             putExtra(CREATION_DATE, creationDateSnooze)
             putExtra(GOAL, goal)
+            putExtra(IMAGE, image)
         }
         val dismissIntent = Intent(applicationContext, AlarmReceiver::class.java).apply {
             action = ACTION_DISMISS
@@ -217,6 +220,7 @@ class AlarmReceiver : BroadcastReceiver() {
             putExtra(HOUR, hour)
             putExtra(MINUTE, minute)
             putExtra(CREATION_DATE, creationDateSnooze)
+            putExtra(IMAGE, image)
         }
         val notificationDismissIntent =
             Intent(applicationContext, AlarmReceiver::class.java).apply {
@@ -225,6 +229,7 @@ class AlarmReceiver : BroadcastReceiver() {
                 putExtra(HOUR, hour)
                 putExtra(MINUTE, minute)
                 putExtra(CREATION_DATE, creationDateSnooze)
+                putExtra(IMAGE, image)
             }
         alarmReceivedIntent.putExtra(ALARM, alarmTone)
 
@@ -233,6 +238,7 @@ class AlarmReceiver : BroadcastReceiver() {
         fullScreenIntent.putExtra(MINUTE, minute)
         fullScreenIntent.putExtra(CREATION_DATE, creationDateSnooze)
         fullScreenIntent.putExtra(GOAL, goal)
+        fullScreenIntent.putExtra(IMAGE, image)
 
         return smplrAlarmSet(applicationContext) {
             hour { hour }
@@ -243,11 +249,11 @@ class AlarmReceiver : BroadcastReceiver() {
             notification {
                 alarmNotification {
                     smallIcon { R.drawable.ic_baseline_notifications_active_24 }
-                    title { "Snooze for $goal" }
-                    bigText { "It's time to wake up already, no? " }
+                    title { context.getString(gentle.hilt.playground.R.string.Alarm) }
+                    bigText { "${context.getString(gentle.hilt.playground.R.string.it_s_time_for)} $goal" }
                     autoCancel { true }
-                    firstButtonText { "Snooze" }
-                    secondButtonText { "Dismiss" }
+                    firstButtonText { context.getString(gentle.hilt.playground.R.string.snooze_tittle) }
+                    secondButtonText { context.getString(gentle.hilt.playground.R.string.turnOff_tittle) }
                     firstButtonIntent { snoozeIntent }
                     secondButtonIntent { dismissIntent }
                     notificationDismissedIntent { notificationDismissIntent }
@@ -257,8 +263,8 @@ class AlarmReceiver : BroadcastReceiver() {
                 channel {
                     importance { NotificationManager.IMPORTANCE_HIGH }
                     showBadge { false }
-                    name { "AlarmReceiver" }
-                    description { "AlarmReceiver description" }
+                    name { context.getString(gentle.hilt.playground.R.string.alarm) }
+                    description { context.getString(gentle.hilt.playground.R.string.your_alarm) }
                 }
             }
         }

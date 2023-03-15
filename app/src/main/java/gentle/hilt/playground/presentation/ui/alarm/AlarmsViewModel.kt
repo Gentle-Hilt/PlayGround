@@ -8,10 +8,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import de.coldtea.smplr.smplralarm.R
 import de.coldtea.smplr.smplralarm.alarmNotification
 import de.coldtea.smplr.smplralarm.channel
 import de.coldtea.smplr.smplralarm.smplrAlarmSet
+import gentle.hilt.playground.R
 import gentle.hilt.playground.data.datastore.DataStoreManager
 import gentle.hilt.playground.data.room.entity.AlarmEntity
 import gentle.hilt.playground.data.room.repository.AlarmEntityRepository
@@ -161,12 +161,12 @@ class AlarmsViewModel @Inject constructor(
             alarmReceivedIntent { alarmReceivedIntent }
             notification {
                 alarmNotification {
-                    smallIcon { R.drawable.ic_baseline_notifications_active_24 }
-                    title { "Alarm" }
-                    bigText { "it's time for $goal" }
+                    smallIcon { de.coldtea.smplr.smplralarm.R.drawable.ic_baseline_notifications_active_24 }
+                    title { context.getString(R.string.Alarm) }
+                    bigText { "${context.getString(R.string.it_s_time_for)} $goal" }
                     autoCancel { true }
-                    firstButtonText { "Snooze" }
-                    secondButtonText { "Dismiss" }
+                    firstButtonText { context.getString(R.string.snooze_tittle) }
+                    secondButtonText { context.getString(R.string.turnOff_tittle) }
                     firstButtonIntent { snoozeIntent }
                     secondButtonIntent { dismissIntent }
                     notificationDismissedIntent { notificationDismissIntent }
@@ -176,8 +176,8 @@ class AlarmsViewModel @Inject constructor(
                 channel {
                     importance { NotificationManager.IMPORTANCE_HIGH }
                     showBadge { false }
-                    name { "Alarm" }
-                    description { "it's your Alarm!" }
+                    name { context.getString(R.string.alarm) }
+                    description { context.getString(R.string.your_alarm) }
                 }
             }
         }

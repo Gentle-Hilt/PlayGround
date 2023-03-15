@@ -193,6 +193,6 @@ dependencies {
     implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
 
     // MapKit - full
-    implementation 'com.yandex.android:maps.mobile:4.2.2-full'
+    implementation 'com.yandex.android:maps.mobile:4.3.1-full'
 }
 

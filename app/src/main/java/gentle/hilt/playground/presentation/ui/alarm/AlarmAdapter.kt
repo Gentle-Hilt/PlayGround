@@ -3,9 +3,11 @@ package gentle.hilt.playground.presentation.ui.alarm
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
+import android.os.Build
 import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -20,6 +22,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 import kotlin.time.Duration.Companion.minutes
+
 
 class AlarmAdapter @Inject constructor(
     private var onSwitchClicked: (AlarmEntity, isChecked: Boolean) -> Unit,
@@ -46,6 +49,7 @@ class AlarmAdapter @Inject constructor(
         })
     }
 
+    @RequiresApi(Build.VERSION_CODES.S)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.setData(getItem(position), context, glide)
     }
@@ -95,17 +99,17 @@ class AlarmAdapter @Inject constructor(
                     tvPmAm.text = if (alarm.hour < TWELVE_HOURS) "AM" else "PM"
                     etTimerTime.text = formattedDatePmAm(alarmDate.time)
                 }
-
                 if (alarm.isEnabled == true) {
                     when {
                         rightNow < tillNow -> {
-                            tvAlarmIn.text = "Alarm in ${durationDay.minutes}"
+                            tvAlarmIn.text = "${context.getString(R.string.alarm_in)} ${durationDay.minutes}"
                         }
                         rightNow > tillNow -> {
-                            tvAlarmIn.text = "Alarm in ${difference.minutes}"
+                            tvAlarmIn.text = "${context.getString(R.string.alarm_in)} ${difference.minutes}"
                         }
                         rightNow == tillNow -> {
-                            tvAlarmIn.text = "Alarm in 24 hours 00 minute"
+                            tvAlarmIn.text =
+                                "${context.getString(R.string.alarm_in)} ${context.getString(R.string.twenty_four_hours)}"
                         }
                     }
 
@@ -115,7 +119,7 @@ class AlarmAdapter @Inject constructor(
                         ContextCompat.getColor(context, R.color.black)
                     )
                 } else {
-                    tvAlarmIn.text = "Off"
+                    tvAlarmIn.text = context.getString(R.string.off_on_alarm)
                     etTimerTime.setTextColor(Color.parseColor("#808080"))
                     tvPmAm.setTextColor(Color.parseColor("#808080"))
                     etTitleTimer.setTextColor(Color.parseColor("#808080"))
