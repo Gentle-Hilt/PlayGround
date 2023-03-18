@@ -4,7 +4,8 @@
 This was my playground where i learn android development after some time i decided to publish it as my first application. Local and instrumented tests included!
 
 ## Google Play
-[Download](https://play.google.com/store/apps/details?id=gentle.hilt.playground)
+
+
 
 ## Screenshots
 
@@ -42,8 +43,3 @@ This was my playground where i learn android development after some time i decid
  - [futuredapp](https://github.com/futuredapp/hauler)
  - [afollestad](https://github.com/afollestad/material-dialogs)
  - [bumptech](https://github.com/bumptech/glide)
-
-
-## License
-
-[Policy](https://www.freeprivacypolicy.com/live/f6550983-c31f-4403-9d48-9c0285a4fbff)
