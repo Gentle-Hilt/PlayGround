@@ -120,17 +120,6 @@ class ActivityLockScreenAlarm : AppCompatActivity() {
 
         hideSystemUI()
 
-        viewModel.insertSleepingTrackEntityIntoDB(
-            SleepTrackingEntity(
-                id = id,
-                hour = alarmSetHour,
-                minute = alarmSetMinute,
-                creationDate = Date(creationDate),
-                image = image
-            )
-
-        )
-
         binding.apply {
             textSnooze.text = "${applicationContext.getString(R.string.Swipe)} $minutes ${applicationContext.getString(R.string.minutes)}"
             tvGoal.text = "${applicationContext.getString(R.string.it_s_time_for)} $goal"
@@ -147,6 +136,16 @@ class ActivityLockScreenAlarm : AppCompatActivity() {
             dragDownView.setOnDragDismissedListener {
                 NotificationManagerCompat.from(applicationContext).cancelAll()
 
+                viewModel.insertSleepingTrackEntityIntoDB(
+                    SleepTrackingEntity(
+                        id = id,
+                        hour = alarmSetHour,
+                        minute = alarmSetMinute,
+                        creationDate = Date(creationDate),
+                        image = image
+                    )
+                )
+
                 setFullScreenIntentAlarm(
                     currentHour,
                     currentMinute,
@@ -162,6 +161,16 @@ class ActivityLockScreenAlarm : AppCompatActivity() {
             }
 
             turnOffAlarm.setOnClickListener {
+                viewModel.insertSleepingTrackEntityIntoDB(
+                    SleepTrackingEntity(
+                        id = id,
+                        hour = alarmSetHour,
+                        minute = alarmSetMinute,
+                        creationDate = Date(creationDate),
+                        image = image
+                    )
+                )
+
                 NotificationManagerCompat.from(applicationContext).cancelAll()
                 finishAffinity()
             }
